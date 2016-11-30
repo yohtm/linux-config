@@ -18,3 +18,13 @@ git config --global color.ui true
 git config --global color.status auto
 git config --global color.branch auto
 git config --global color.diff true
+
+cd ~
+git clone https://github.com/yohtm/vim-config.git vim-config
+mv ~/.vimrc ~/.vimrc.old
+mv ~/.vim ~/.vim.old
+ln -s $(readlink -f vim-config/vimrc) ~/.vimrc
+ln -s $(readlink -f vim-config/vim) ~/.vim
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Vim config installed. Please run :PluginInstall in vim"
