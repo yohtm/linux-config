@@ -27,4 +27,4 @@ ln -s $(readlink -f vim-config/vimrc) ~/.vimrc
 ln -s $(readlink -f vim-config/vim) ~/.vim
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-echo "Vim config installed. Please run :PluginInstall in vim"
+vim +PluginInstall  +qall
