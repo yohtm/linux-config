@@ -1,6 +1,9 @@
 sudo apt-get update
 sudo apt-get install -y tmux git vim ssh openssh-server tree htop
 
+if [ $(cat ~/.bashrc | grep apti | wc -l) -eq 0 ]
+then
+
 echo "
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
@@ -8,6 +11,8 @@ alias aptg='sudo apt-get upgrade'
 
 alias venv='source venv/bin/activate'
 " >> ~/.bashrc
+
+fi
 
 git config --global fetch.recurseSubmodules true
 git config --global alias.st status
