@@ -8,6 +8,7 @@ echo "
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
 alias aptg='sudo apt-get upgrade'
+alias sc='sudo supervisorctl'
 
 alias venv='source venv/bin/activate'
 " >> ~/.bashrc
