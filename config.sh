@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install -y tmux git vim ssh openssh-server tree htop lnav
+sudo apt-get install -y tmux git vim ssh openssh-server tree htop lnav curl
 
 if [ $(cat ~/.bashrc | grep apti | wc -l) -eq 0 ]
 then
