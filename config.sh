@@ -9,11 +9,13 @@ alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
 alias aptg='sudo apt-get upgrade'
 alias sc='sudo supervisorctl'
-
-alias venv='source venv/bin/activate'
+alias venv='source \"\$(ls | grep venv -m 1)/bin/activate\"'
 " >> ~/.bashrc
 
 fi
+
+wget "https://raw.githubusercontent.com/yohtm/linux-config/master/tmux.conf"
+mv tmux.conf ~/.tmux.conf
 
 git config --global fetch.recurseSubmodules true
 git config --global alias.st status
