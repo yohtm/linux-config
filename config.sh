@@ -4,12 +4,17 @@ sudo apt-get install -y tmux git vim ssh openssh-server tree htop lnav curl
 if [ $(cat ~/.bashrc | grep apti | wc -l) -eq 0 ]
 then
 
+SYNC_FOLDER=~ # Please update this in bashrc after setup
+
 echo "
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
 alias aptg='sudo apt-get upgrade'
 alias sc='sudo supervisorctl'
 alias venv='source \"\$(ls | grep venv -m 1)/bin/activate\"'
+
+alias tmx='tmux -f $SYNC_FOLDER/.tmux.conf'
+
 " >> ~/.bashrc
 
 fi
