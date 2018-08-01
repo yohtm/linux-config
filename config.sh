@@ -4,12 +4,12 @@ sudo apt-get install -y tmux git vim ssh openssh-server tree htop lnav curl
 if [ $(cat ~/.bashrc | grep apti | wc -l) -eq 0 ]
 then
 
+echo "
 SYNC_FOLDER=~ # Please update this in bashrc after setup
 
 PATH=$PATH:~/bin:$SYNC_FOLDER/bin
-ln -s $SYNC_FOLDER ~/linux-config
+#ln -s $SYNC_FOLDER ~/linux-config
 
-echo "
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
 alias aptg='sudo apt-get upgrade'
