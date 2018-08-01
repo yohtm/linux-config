@@ -6,6 +6,9 @@ then
 
 SYNC_FOLDER=~ # Please update this in bashrc after setup
 
+PATH=$PATH:~/bin:$SYNC_FOLDER/bin
+ln -s $SYNC_FOLDER ~/linux-config
+
 echo "
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
@@ -13,14 +16,11 @@ alias aptg='sudo apt-get upgrade'
 alias sc='sudo supervisorctl'
 alias venv='source \"\$(ls | grep venv -m 1)/bin/activate\"'
 
-alias tmx='tmux -f $SYNC_FOLDER/.tmux.conf'
+alias tmx='tmux -f ~/linux-config/.tmux.conf'
 
 " >> ~/.bashrc
 
 fi
-
-wget "https://raw.githubusercontent.com/yohtm/linux-config/master/tmux.conf"
-mv tmux.conf ~/.tmux.conf
 
 git config --global fetch.recurseSubmodules true
 git config --global alias.st status
