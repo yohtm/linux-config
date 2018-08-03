@@ -16,7 +16,7 @@ alias aptg='sudo apt-get upgrade'
 alias sc='sudo supervisorctl'
 alias venv='source \"\$(ls | grep venv -m 1)/bin/activate\"'
 
-alias tmx='tmux -f ~/linux-config/.tmux.conf'
+alias tmx='tmux -f ~/linux-config/tmux.conf'
 
 " >> ~/.bashrc
 
