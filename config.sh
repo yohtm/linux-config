@@ -1,14 +1,20 @@
 sudo apt-get update
-sudo apt-get install -y tmux git vim ssh openssh-server tree htop lnav curl
+sudo apt-get install -y tmux git vim vim-gtk ssh openssh-server tree htop lnav curl
 
 if [ $(cat ~/.bashrc | grep apti | wc -l) -eq 0 ]
 then
 
 echo "
-SYNC_FOLDER=~ # Please update this in bashrc after setup
+SYNC_FOLDER= # Please update this in bashrc after setup
 
-PATH=$PATH:~/bin:$SYNC_FOLDER/bin
-#ln -s $SYNC_FOLDER ~/linux-config
+PATH=\$PATH:~/bin:\$SYNC_FOLDER/bin
+
+# If linux-config folder does not exist and SYNC_FOLDER has been set, link folder
+if [ ! -d ~/linux-config ] && [ "$SYNC_FOLDER" != \"\" ]; then
+  ln -s \$SYNC_FOLDER ~/linux-config
+  mv ~/.vimrc ~/.vimrc-old
+  ln -s ~/linux-config/vimrc .vimrc
+fi
 
 alias apti='sudo apt-get install'
 alias aptd='sudo apt-get update'
